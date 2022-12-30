@@ -1,10 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type {NextApiRequest, NextApiResponse} from 'next'
 
-export default async function handler(
-	req: NextApiRequest,
-	res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	const {Configuration, OpenAIApi} = require("openai");
 
 	const configuration = new Configuration({
@@ -22,7 +19,6 @@ export default async function handler(
 		top_p: req.body.top_p,
 		frequency_penalty: req.body.frequency_penalty,
 		presence_penalty: req.body.presence_penalty,
-
 	})
 	res.status(200).json(completion.data.choices[0].text)
 }
