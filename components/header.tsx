@@ -15,7 +15,7 @@ function HeaderComponent() {
 			>
 				<Stack isInline spacing={8} align="center" justifyContent="space-between" margin="5px">
 					<HStack marginX="10px">
-						<Heading fontSize="2xl">Caesar Cipher</Heading>
+						<Heading fontSize="2xl">Custom GPT</Heading>
 					</HStack>
 					<HStack>
 						<Button
