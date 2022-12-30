@@ -111,7 +111,7 @@ export default function Home() {
 
 				{messageHistory.map((message, index) => {
 					return (
-						<Card key={index} bg={message.sender === Sender.User ? "gray.600" : "gray.800"}>
+						<Card key={index} bg={message.sender === Sender.Bot ? "gray.600" : "gray.800"}>
 							<CardBody>
 								<Text>{message.sender === Sender.System ? "" : message.sender + ": "}{message.message}</Text>
 							</CardBody>
