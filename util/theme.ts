@@ -1,8 +1,8 @@
 import {extendTheme} from '@chakra-ui/react'
 
 const theme = extendTheme({
-	initialColorMode: 'system',
-	useSystemColorMode: false,
+	initialColorMode: 'dark',
+	// useSystemColorMode: false,
 	fontFamilies: {
 		body: `'Raleway', sans-serif`,
 		heading: `'Open Sans', sans-serif`,
