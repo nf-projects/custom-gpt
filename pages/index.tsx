@@ -19,7 +19,9 @@ export default function Home() {
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState<boolean>(false);
 
-	const {colorMode, toggleColorMode} = useColorMode();
+	const {colorMode} = useColorMode();
+	const botColor = colorMode === "light" ? "gray.100" : "gray.900";
+	const userColor = colorMode === "light" ? "gray.300" : "gray.700";
 
 	// auto scroll to bottom
 	const divRef = useRef(null);
@@ -140,7 +142,7 @@ export default function Home() {
 				{messageHistory.map((message, index) => {
 					if (!message.defaultMessage) {
 						return (
-							<Card key={index} bg={message.sender === Sender.Bot ? "gray.600" : "gray.800"}>
+							<Card m="5px" key={index} bg={message.sender === Sender.Bot ? botColor : userColor}>
 								<CardBody>
 									<Text>{message.sender === Sender.System ? "" : message.sender + ": "}{message.message}</Text>
 								</CardBody>
@@ -170,7 +172,6 @@ export default function Home() {
 									            isLoading={loading} onClick={handleSubmit}/>
 								</InputRightElement>
 							</InputGroup>
-
 						</form>
 					</Box>
 				</VStack>
