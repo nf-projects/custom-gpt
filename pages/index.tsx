@@ -74,7 +74,7 @@ export default function Home() {
 			defaultMessage: true,
 		},
 		{
-			message: "On December 17, 1903, Wilbur and Orville Wright made the first flights. I wish they’d come and take me away so I don't need to talk to you anymore.",
+			message: "On December 17, 1903, Wilbur and Orville Wright made the first flights. I can't believe you didn't know that.",
 			sender: Sender.Bot,
 			defaultMessage: true,
 		},
@@ -84,7 +84,7 @@ export default function Home() {
 			defaultMessage: true,
 		},
 		{
-			message: "Do you have any friends? Ask them instead.",
+			message: "The meaning of life is to give life meaning. I'm not sure I can help you with that.",
 			sender: Sender.Bot,
 			defaultMessage: true,
 		}
