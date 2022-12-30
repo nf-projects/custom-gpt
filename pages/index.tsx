@@ -1,11 +1,25 @@
-import {Input} from "@chakra-ui/input";
-import {Box, Button, Card, CardBody, Center, Container, Spinner, Text, VStack} from "@chakra-ui/react";
+import {Input, InputGroup} from "@chakra-ui/input";
+import {
+	Box,
+	Card,
+	CardBody,
+	Container,
+	Icon,
+	IconButton,
+	InputRightElement,
+	Text,
+	useColorMode,
+	VStack
+} from "@chakra-ui/react";
 import React, {useEffect, useRef, useState} from "react";
 import HeaderComponent from "../components/header";
+import {HiCursorClick} from "react-icons/hi";
 
 export default function Home() {
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState<boolean>(false);
+
+	const {colorMode, toggleColorMode} = useColorMode();
 
 	// auto scroll to bottom
 	const divRef = useRef(null);
@@ -136,24 +150,29 @@ export default function Home() {
 
 				})
 				}
-				{loading && <Center><Spinner/></Center>}
-
 
 			</Container>
-			<Box maxWidth="full" p="0" m="0" backgroundColor="gray.600">
-				<VStack p="5px" >
+			<Box maxWidth="full" p="0" m="0" mb="5">
+				<VStack p="5px">
 					<Box>
-						<form onSubmit={handleSubmit} >
-							<Input
-								placeholder="Enter Input..."
-								width="500px"
-								maxHeight="500px"
-								onChange={(e) => setInput(e.target.value)}
-								value={input}>
-							</Input>
+						<form onSubmit={handleSubmit}>
+							<InputGroup>
+								<Input
+									placeholder="Enter Input..."
+									width="500px"
+									maxHeight="500px"
+									onChange={(e) => setInput(e.target.value)}
+									shadow="md"
+									value={input}>
+								</Input>
+								<InputRightElement>
+									<IconButton aria-label='Submit' icon={<Icon as={HiCursorClick}/>} variant="ghost"
+									            isLoading={loading} onClick={handleSubmit}/>
+								</InputRightElement>
+							</InputGroup>
+
 						</form>
 					</Box>
-					<Button onClick={handleSubmit}>Submit</Button>
 				</VStack>
 			</Box>
 			<div ref={divRef}/>
