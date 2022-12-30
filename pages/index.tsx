@@ -1,6 +1,7 @@
 import {Input} from "@chakra-ui/input";
-import {Button, Card, CardBody, Center, Container, Spinner, Text, VStack} from "@chakra-ui/react";
-import {useEffect, useRef, useState} from "react";
+import {Box, Button, Card, CardBody, Center, Container, Spinner, Text, VStack} from "@chakra-ui/react";
+import React, {useEffect, useRef, useState} from "react";
+import HeaderComponent from "../components/header";
 
 export default function Home() {
 	const [input, setInput] = useState("");
@@ -10,12 +11,12 @@ export default function Home() {
 	const divRef = useRef(null);
 	useEffect(() => {
 		// @ts-ignore
-		divRef.current.scrollIntoView({ behavior: 'smooth' });
+		divRef.current.scrollIntoView({behavior: 'smooth'});
 	});
 
 	enum Sender {
 		User = "You",
-		Bot = "Marv",
+		Bot = "Bot",
 		System = "system",
 	}
 
@@ -27,7 +28,7 @@ export default function Home() {
 
 	const defaultMessages: Message[] = [
 		{
-			message: "Marv is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user:",
+			message: "Bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user:",
 			sender: Sender.System,
 			defaultMessage: true,
 		},
@@ -85,7 +86,9 @@ export default function Home() {
 		}).join("\n");
 	}
 
-	async function handleSubmit() {
+	async function handleSubmit(e: React.FormEvent) {
+		e.preventDefault();
+
 		setLoading(true);
 
 		let messages = messageHistoryToString();
@@ -117,10 +120,11 @@ export default function Home() {
 
 	return (
 		<>
+			<HeaderComponent/>
 			<Container p={15}>
 
 				{messageHistory.map((message, index) => {
-					if(!message.defaultMessage) {
+					if (!message.defaultMessage) {
 						return (
 							<Card key={index} bg={message.sender === Sender.Bot ? "gray.600" : "gray.800"}>
 								<CardBody>
@@ -136,18 +140,23 @@ export default function Home() {
 
 
 			</Container>
-			<Container maxWidth="full" p="0" m="0" backgroundColor="gray.600">
-				<VStack p="5px">
-					<Input maxW="500"
-						placeholder="Enter Input..."
-					       onChange={(e) => setInput(e.target.value)}
-					       value={input}></Input>
+			<Box maxWidth="full" p="0" m="0" backgroundColor="gray.600">
+				<VStack p="5px" >
+					<Box>
+						<form onSubmit={handleSubmit} >
+							<Input
+								placeholder="Enter Input..."
+								width="500px"
+								maxHeight="500px"
+								onChange={(e) => setInput(e.target.value)}
+								value={input}>
+							</Input>
+						</form>
+					</Box>
 					<Button onClick={handleSubmit}>Submit</Button>
-
-
 				</VStack>
-			</Container>
-			<div ref={divRef} />
+			</Box>
+			<div ref={divRef}/>
 		</>
 	)
 }
