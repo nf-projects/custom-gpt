@@ -11,7 +11,7 @@ function HeaderComponent() {
 				position="sticky"
 				top="0"
 				zIndex="1"
-				backgroundColor="gray.600"
+				backgroundColor={colorMode === "light" ? "gray.100" : "gray.900"}
 			>
 				<Stack isInline spacing={8} align="center" justifyContent="space-between" margin="5px">
 					<HStack marginX="10px">
