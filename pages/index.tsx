@@ -14,10 +14,13 @@ import {
 import React, {useEffect, useRef, useState} from "react";
 import HeaderComponent from "../components/header";
 import {HiCursorClick} from "react-icons/hi";
+import {T, useTranslate} from "@tolgee/react";
 
 export default function Home() {
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState<boolean>(false);
+
+	const t = useTranslate();
 
 	const {colorMode} = useColorMode();
 	const botColor = colorMode === "light" ? "gray.100" : "gray.900";
@@ -157,6 +160,7 @@ export default function Home() {
 			<Box maxWidth="full" p="0" m="0" mb="5">
 				<VStack p="5px">
 					<Box>
+						<h1><T>test</T></h1>
 						<form onSubmit={handleSubmit}>
 							<InputGroup>
 								<Input
