@@ -160,9 +160,6 @@ export default function Home() {
 			<Box maxWidth="full" p="0" m="0" mb="5">
 				<VStack p="5px">
 					<Box>
-						<Box m="5px">
-							<h1>{t("welcome")}</h1>
-						</Box>
 						<form onSubmit={handleSubmit}>
 							<InputGroup>
 								<Input

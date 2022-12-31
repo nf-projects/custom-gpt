@@ -1,9 +1,14 @@
 import {useRouter} from 'next/router';
 
-export function LangSelector () {
+interface ComponentProps {
+	onLanguageChange: (language: string) => void;
+}
+
+export function LangSelector ({onLanguageChange}: ComponentProps) {
 	const router = useRouter();
-	const setLanguage = (lang: string) => {
-		router.replace(router.pathname, undefined, { locale: lang });
+	const setLanguage = async (lang: string) => {
+		await router.replace(router.pathname, undefined, {locale: lang});
+		onLanguageChange(lang);
 	};
 
 	return (

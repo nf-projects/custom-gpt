@@ -1,7 +1,8 @@
 {
   "dark_mode" : "Dunkler Modus",
   "enter_input" : "Chat-Nachricht eingeben...",
+  "lang_change_desc" : "Laden Sie die Konversation neu, um Änderungen anzuzeigen",
+  "lang_change_title" : "Sprache erfolgreich geändert",
   "lang_instructions" : "Antworten Sie immer auf Deutsch",
-  "light_mode" : "Licht-Modus",
-  "welcome" : "Willkommen bei Custom GPT!"
+  "light_mode" : "Licht-Modus"
 }
