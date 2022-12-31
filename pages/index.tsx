@@ -161,8 +161,7 @@ export default function Home() {
 							<InputGroup>
 								<Input
 									placeholder="Enter Input..."
-									width="500px"
-									maxHeight="500px"
+									width="container.sm"
 									onChange={(e) => setInput(e.target.value)}
 									shadow="md"
 									value={input}>
