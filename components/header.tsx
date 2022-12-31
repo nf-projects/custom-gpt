@@ -10,13 +10,14 @@ function HeaderComponent() {
 
 	const t = useTranslate();
 
-	function onLanguageChange(language: string) {
+	function onLanguageChange() {
 		toast({
 			title: t("lang_change_title"),
 			description: t("lang_change_desc"),
 			status: "success",
-			duration: 9000,
+			duration: 5000,
 			isClosable: true,
+			position: "bottom-right",
 		})
 	}
 
