@@ -1,3 +1,7 @@
 {
-  "test" : "Welcome"
+  "dark_mode" : "Dark Mode",
+  "enter_input" : "Enter chat message...",
+  "lang_instructions" : "Always reply in english",
+  "light_mode" : "Light Mode",
+  "welcome" : "Welcome to Custom GPT!"
 }
