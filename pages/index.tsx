@@ -47,7 +47,7 @@ export default function Home() {
 
 	const defaultMessages: Message[] = [
 		{
-			message: "Bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user. " + t("lang_instructions"), // tell the bot to reply in the current language
+			message: "bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user. " + t("lang_instructions"), // tell the bot to reply in the current language
 			sender: Sender.System,
 			defaultMessage: true,
 		},
@@ -160,9 +160,6 @@ export default function Home() {
 			<Box maxWidth="full" p="0" m="0" mb="5">
 				<VStack p="5px">
 					<Box>
-						<Box m="5px">
-							<h1>{t("welcome")}</h1>
-						</Box>
 						<form onSubmit={handleSubmit}>
 							<InputGroup>
 								<Input

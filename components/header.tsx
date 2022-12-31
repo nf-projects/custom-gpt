@@ -1,13 +1,24 @@
 import {MoonIcon, SunIcon} from "@chakra-ui/icons";
-import {Box, Button, Heading, HStack, Stack, useColorMode} from "@chakra-ui/react";
+import {Box, Button, Heading, HStack, Stack, useColorMode, useToast} from "@chakra-ui/react";
 import React from "react";
 import {LangSelector} from "./langselector";
 import {useTranslate} from "@tolgee/react";
 
 function HeaderComponent() {
 	const {colorMode, toggleColorMode} = useColorMode();
+	const toast = useToast()
 
 	const t = useTranslate();
+
+	function onLanguageChange(language: string) {
+		toast({
+			title: t("lang_change_title"),
+			description: t("lang_change_desc"),
+			status: "success",
+			duration: 9000,
+			isClosable: true,
+		})
+	}
 
 	return (
 		<>
@@ -32,7 +43,7 @@ function HeaderComponent() {
 							{colorMode == "dark" ? <MoonIcon></MoonIcon> : <SunIcon></SunIcon>}
 							{colorMode == "light" ? (t("light_mode")) : (t("dark_mode"))}
 						</Button>
-						<LangSelector />
+						<LangSelector  onLanguageChange={onLanguageChange}/>
 					</HStack>
 				</Stack>
 				<Box>

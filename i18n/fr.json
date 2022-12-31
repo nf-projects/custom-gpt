@@ -1,7 +1,8 @@
 {
   "dark_mode" : "Mode foncé",
   "enter_input" : "Entrez le message du chat...",
+  "lang_change_desc" : "Rechargez la conversation pour voir les changements",
+  "lang_change_title" : "Langue changée avec succès",
   "lang_instructions" : "Répondez toujours en français",
-  "light_mode" : "Mode d'éclairage",
-  "welcome" : "Bienvenue à Custom GPT !"
+  "light_mode" : "Mode d'éclairage"
 }

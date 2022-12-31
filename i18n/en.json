@@ -1,7 +1,8 @@
 {
   "dark_mode" : "Dark Mode",
   "enter_input" : "Enter chat message...",
+  "lang_change_desc" : "Reload the conversation to see changes",
+  "lang_change_title" : "Language changed successfully",
   "lang_instructions" : "Always reply in english",
-  "light_mode" : "Light Mode",
-  "welcome" : "Welcome to Custom GPT!"
+  "light_mode" : "Light Mode"
 }
