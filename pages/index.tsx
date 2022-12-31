@@ -14,10 +14,13 @@ import {
 import React, {useEffect, useRef, useState} from "react";
 import HeaderComponent from "../components/header";
 import {HiCursorClick} from "react-icons/hi";
+import {useTranslate} from "@tolgee/react";
 
 export default function Home() {
 	const [input, setInput] = useState("");
 	const [loading, setLoading] = useState<boolean>(false);
+
+	const t = useTranslate();
 
 	const {colorMode} = useColorMode();
 	const botColor = colorMode === "light" ? "gray.100" : "gray.900";
@@ -44,7 +47,7 @@ export default function Home() {
 
 	const defaultMessages: Message[] = [
 		{
-			message: "Bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user:",
+			message: "Bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user. " + t("lang_instructions"), // tell the bot to reply in the current language
 			sender: Sender.System,
 			defaultMessage: true,
 		},
@@ -157,10 +160,13 @@ export default function Home() {
 			<Box maxWidth="full" p="0" m="0" mb="5">
 				<VStack p="5px">
 					<Box>
+						<Box m="5px">
+							<h1>{t("welcome")}</h1>
+						</Box>
 						<form onSubmit={handleSubmit}>
 							<InputGroup>
 								<Input
-									placeholder="Enter Input..."
+									placeholder={t("enter_input")}
 									width="container.sm"
 									onChange={(e) => setInput(e.target.value)}
 									shadow="md"

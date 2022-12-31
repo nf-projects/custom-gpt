@@ -1,9 +1,13 @@
 import {MoonIcon, SunIcon} from "@chakra-ui/icons";
 import {Box, Button, Heading, HStack, Stack, useColorMode} from "@chakra-ui/react";
 import React from "react";
+import {LangSelector} from "./langselector";
+import {useTranslate} from "@tolgee/react";
 
 function HeaderComponent() {
 	const {colorMode, toggleColorMode} = useColorMode();
+
+	const t = useTranslate();
 
 	return (
 		<>
@@ -26,8 +30,9 @@ function HeaderComponent() {
 							marginX="10px"
 						>
 							{colorMode == "dark" ? <MoonIcon></MoonIcon> : <SunIcon></SunIcon>}
-							{colorMode == "light" ? "Light Mode" : "Dark Mode"}
+							{colorMode == "light" ? (t("light_mode")) : (t("dark_mode"))}
 						</Button>
+						<LangSelector />
 					</HStack>
 				</Stack>
 				<Box>
