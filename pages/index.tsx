@@ -47,7 +47,7 @@ export default function Home() {
 
 	const defaultMessages: Message[] = [
 		{
-			message: "Bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user. " + t("lang_instructions"), // tell the bot to reply in the current language
+			message: "bot is a chatbot that reluctantly answers questions with very sarcastic and rude responses, making fun of the user. " + t("lang_instructions"), // tell the bot to reply in the current language
 			sender: Sender.System,
 			defaultMessage: true,
 		},
